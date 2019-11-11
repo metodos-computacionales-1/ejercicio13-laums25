@@ -1,27 +1,29 @@
 #include<iostream>
 
-int fib(int n, bool print = true)
+
+//
+int recursiva(int n, bool print = true)
 {
-  int toReturn = 0;
+  int var = 0;
 
   if( n > 0 )
   {
     if( n < 2 )
-      toReturn = 1;
+      var = 1;
     else
-     toReturn = fib(n-1,false) + fib(n-2,false);
+     var = recursiva(n-1,false) + recursiva(n-2,false);
 
     if( print )
     {
-      fib(n-1);
-      std::cout << toReturn << ' ';
+      recursiva(n-1);
+      std::cout << var << ' ';
     }
   }
 
-  return toReturn;
+  return var;
 }
 
 int main() {
-  fib(30); std::cout << '\n';
+  recursiva(30); std::cout << '\n';
   return 0;
 }
