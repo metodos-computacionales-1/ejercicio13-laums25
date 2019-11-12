@@ -2,8 +2,9 @@
 #include <cmath>
 using namespace std;
 
-\\Tomado de: https://cod-ayu.blogspot.com/2015/10/multiplicacion-de-matrices-en-c.html
-\\Tomado de: https://www.geeksforgeeks.org/hilbert-matrix/
+//Tomado de: https://cod-ayu.blogspot.com/2015/10/multiplicacion-de-matrices-en-c.html
+//Tomado de: https://www.geeksforgeeks.org/hilbert-matrix/
+
 void printMatrix(int n);
 void multiplicacion(double A[20][20],int FA,int CA,double B[20][20],int FB,int CB,double C[20][20] ){
     
