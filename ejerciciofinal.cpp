@@ -3,7 +3,8 @@
 using namespace std;
 
 \\Tomado de: https://cod-ayu.blogspot.com/2015/10/multiplicacion-de-matrices-en-c.html
-
+\\Tomado de: https://www.geeksforgeeks.org/hilbert-matrix/
+void printMatrix(int n);
 void multiplicacion(double A[20][20],int FA,int CA,double B[20][20],int FB,int CB,double C[20][20] ){
     
     if(CA==FB){//para que se puedan multiplicar dos matrices
@@ -36,6 +37,7 @@ void llenar_matriz(double M[20][20],int f,int c){
     double B[20][20];
     double C[20][20];
     int fa,ca,fb,cb;
+    int n=3;
     cout.precision(16);
     cout.setf(std::ios::scientific);
     cout<<"\t"<<"MATRIZ A:"<<endl;
@@ -57,7 +59,29 @@ void llenar_matriz(double M[20][20],int f,int c){
     mostrar_matriz(B,fb,cb);
     cout<<"matriz AXB:"<<endl;
     mostrar_matriz(C,fa,cb);
+    printMatrix(n);
     
     
     return 0;
+}
+
+void printMatrix(int n) 
+{ 
+    float H[n][n]; 
+  
+    for (int i = 0; i < n; i++) { 
+        for (int j = 0; j < n; j++) { 
+  
+            // using the formula to generate 
+            // hilbert matrix 
+            H[i][j] = (float)1.0 /  
+                     ((i + 1) + (j + 1) - 1.0); 
+        } 
+    } 
+  
+    for (int i = 0; i < n; i++) { 
+        for (int j = 0; j < n; j++)  
+            cout << H[i][j] << " ";         
+        cout << endl; 
+    } 
 }
